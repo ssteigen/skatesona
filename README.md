@@ -1,3 +1,27 @@
+# Skatesona
+
+View this app at https://ssteigen.github.io/skatesona/
+
+![Screenshot](skatesona.png)
+
+## Development
+
+To install/run app locally:
+
+`git clone https://github.com/ssteigen/skatesona.git`
+
+`cd skatesona`
+
+`npm start`
+
+To deploy app:
+
+`cd skatesona`
+
+`npm run deploy`
+
+----
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
