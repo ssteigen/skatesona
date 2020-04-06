@@ -9,7 +9,8 @@
     "@testing-library/user-event": "^7.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "styled-components": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -35,6 +36,10 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.2.0"
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-react": "^7.19.0",
+    "gh-pages": "^2.2.0",
+    "prettier": "^2.0.4"
   }
 }
