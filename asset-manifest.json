@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/skatesona/static/css/main.5f361e03.chunk.css",
+    "main.js": "/skatesona/static/js/main.e871b04e.chunk.js",
+    "main.js.map": "/skatesona/static/js/main.e871b04e.chunk.js.map",
+    "runtime-main.js": "/skatesona/static/js/runtime-main.237b1604.js",
+    "runtime-main.js.map": "/skatesona/static/js/runtime-main.237b1604.js.map",
+    "static/js/2.0441eae2.chunk.js": "/skatesona/static/js/2.0441eae2.chunk.js",
+    "static/js/2.0441eae2.chunk.js.map": "/skatesona/static/js/2.0441eae2.chunk.js.map",
+    "index.html": "/skatesona/index.html",
+    "precache-manifest.2a1a5f8a344bb3846c10fe26ce8d2717.js": "/skatesona/precache-manifest.2a1a5f8a344bb3846c10fe26ce8d2717.js",
+    "service-worker.js": "/skatesona/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/skatesona/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.0441eae2.chunk.js.LICENSE.txt": "/skatesona/static/js/2.0441eae2.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/skatesona/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.237b1604.js",
+    "static/js/2.0441eae2.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.e871b04e.chunk.js"
+  ]
+}
