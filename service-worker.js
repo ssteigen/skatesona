@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/skatesona/precache-manifest.2a1a5f8a344bb3846c10fe26ce8d2717.js"
+  "/skatesona/precache-manifest.62fc4110f3ee8317436f525250a06678.js"
 );
 
 self.addEventListener('message', (event) => {

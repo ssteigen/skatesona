@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.css"],"names":[],"mappings":"AAAA,gBAGE,WAAY,CACZ,YAAa,CACb,aACF","file":"main.dc1d742c.chunk.css","sourcesContent":["html,\r\nbody,\r\n#root {\r\n  width: 100vw;\r\n  height: 100vh;\r\n  overflow: auto;\r\n}\r\n"]}
