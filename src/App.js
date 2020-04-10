@@ -1,6 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 
 import SkateSVG from "./skate.svg";
+
+import options from "./options";
+
+import styled from "styled-components";
 
 function Layout({ children }) {
   return (
@@ -23,7 +27,67 @@ function Card({ children, className = "" }) {
 function Header() {
   return (
     <div>
-      <h1 className="text-3xl font-bold">Skatesona</h1>
+      <h1 className="text-3xl mb-4">Skatesona</h1>
+    </div>
+  );
+}
+
+function ColorSwatch({ title, color, onBootColorChange }) {
+  return (
+    <div
+      className="p-4 mr-1 rounded inline-block"
+      title={title}
+      style={{
+        background: color,
+      }}
+      onClick={() => onBootColorChange(color)}
+    ></div>
+  );
+}
+
+function SwatchGroup({ groupName, colors, onBootColorChange }) {
+  return (
+    <>
+      <div>{groupName}</div>
+      {Object.entries(colors).map(([colorName, colorValue]) => (
+        <ColorSwatch
+          key={`${groupName}-${colorName}`}
+          title={colorName}
+          color={colorValue}
+          onBootColorChange={onBootColorChange}
+        />
+      ))}
+    </>
+  );
+}
+
+function PartPanel({ partName, group, onBootColorChange }) {
+  return (
+    <>
+      <div>{partName}</div>
+      {Object.entries(group).map(([groupName, colors]) => (
+        <SwatchGroup
+          key={`${partName}-${groupName}`}
+          groupName={groupName}
+          colors={colors}
+          onBootColorChange={onBootColorChange}
+        />
+      ))}
+    </>
+  );
+}
+
+function ColorPicker({ options, onBootColorChange }) {
+  return (
+    <div className="p-4">
+      {Object.entries(options).map(([partName, group]) => (
+        <PartPanel
+          key={partName}
+          partName={partName}
+          group={group}
+          onBootColorChange={onBootColorChange}
+        />
+      ))}
     </div>
   );
 }
@@ -51,9 +115,9 @@ function Builder() {
   const [plateColorLocked, setPlateColorLocked] = useState(false);
 
   return (
-    <div class="flex mb-4">
-      <div class="w-1/2">
-        <Skate
+    <div className="flex mb-4">
+      <div className="w-1/2">
+        <StyledSkate
           bootColor={bootColor}
           lacesColor={lacesColor}
           wheelsColor={wheelsColor}
@@ -63,24 +127,67 @@ function Builder() {
           plateColor={plateColor}
         />
       </div>
-      <div class="w-1/2">Testing</div>
+      <div className="w-1/2">
+        <ColorPicker options={options} onBootColorChange={setBootColor} />
+      </div>
     </div>
   );
 }
 
-function SkateWrapper() {}
+async function getSvgContent(svg) {
+  const response = await fetch(svg);
+  const svgContent = await response.text();
 
-function Skate({
-  bootColor,
-  lacesColor,
-  wheelsColor,
-  toestopColor,
-  eyeletsColor,
-  soleColor,
-  plateColor,
-}) {
-  return <img src={SkateSVG} className="skate" />;
+  return svgContent;
 }
+
+function Skate({ className }) {
+  const [svgContent, setSvgContent] = useState();
+
+  // Only load the SVG once.
+  useMemo(() => {
+    getSvgContent(SkateSVG).then(setSvgContent);
+  }, []);
+
+  return (
+    <div
+      className={className}
+      dangerouslySetInnerHTML={{ __html: svgContent }}
+    />
+  );
+}
+
+const StyledSkate = styled(Skate)`
+  .boot {
+    fill: ${(props) => props.bootColor || "pink"};
+  }
+  .lace {
+    fill: ${(props) => props.lacesColor || "violet"};
+  }
+  .wheel {
+    fill: ${(props) => props.wheelColor || "violet"};
+  }
+  .toestop {
+    fill: ${(props) => props.toestopColor || "violet"};
+  }
+  .eyelet,
+  .hook {
+    fill: ${(props) => props.eyeletsColor || "silver"};
+  }
+  .sole {
+    fill: ${(props) => props.soleColor || "black"};
+  }
+  .plate {
+    fill: ${(props) => props.plateColor || "silver"};
+  }
+  .bearing {
+    fill: black;
+  }
+  .axle,
+  .hardware {
+    fill: gray;
+  }
+`;
 
 function Footer() {
   return <div />;
@@ -91,7 +198,9 @@ function App() {
     <Layout>
       <Card>
         <Header />
+        <hr className="py-4" />
         <Builder />
+        <hr className="py-4" />
         <Footer />
       </Card>
     </Layout>
