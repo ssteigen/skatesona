@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c543cac87ec422d9f9aead39cec755a1",
+    "revision": "0c9c9b555c88a28d28e5c510797a0db9",
     "url": "/skatesona/index.html"
   },
   {
-    "revision": "ee15e446d857be46e733",
+    "revision": "acd6bb9373137018e648",
     "url": "/skatesona/static/css/main.dc1d742c.chunk.css"
   },
   {
-    "revision": "755db54425dd4a74c52f",
-    "url": "/skatesona/static/js/2.d9ba9ce6.chunk.js"
+    "revision": "3916362c49737137f942",
+    "url": "/skatesona/static/js/2.1fd35320.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/skatesona/static/js/2.d9ba9ce6.chunk.js.LICENSE.txt"
+    "url": "/skatesona/static/js/2.1fd35320.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ee15e446d857be46e733",
-    "url": "/skatesona/static/js/main.fced06f9.chunk.js"
+    "revision": "acd6bb9373137018e648",
+    "url": "/skatesona/static/js/main.e6290ff8.chunk.js"
   },
   {
     "revision": "1fca4488ffe71aac4ff7",

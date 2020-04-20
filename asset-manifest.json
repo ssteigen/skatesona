@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/skatesona/static/css/main.dc1d742c.chunk.css",
-    "main.js": "/skatesona/static/js/main.fced06f9.chunk.js",
-    "main.js.map": "/skatesona/static/js/main.fced06f9.chunk.js.map",
+    "main.js": "/skatesona/static/js/main.e6290ff8.chunk.js",
+    "main.js.map": "/skatesona/static/js/main.e6290ff8.chunk.js.map",
     "runtime-main.js": "/skatesona/static/js/runtime-main.237b1604.js",
     "runtime-main.js.map": "/skatesona/static/js/runtime-main.237b1604.js.map",
-    "static/js/2.d9ba9ce6.chunk.js": "/skatesona/static/js/2.d9ba9ce6.chunk.js",
-    "static/js/2.d9ba9ce6.chunk.js.map": "/skatesona/static/js/2.d9ba9ce6.chunk.js.map",
+    "static/js/2.1fd35320.chunk.js": "/skatesona/static/js/2.1fd35320.chunk.js",
+    "static/js/2.1fd35320.chunk.js.map": "/skatesona/static/js/2.1fd35320.chunk.js.map",
     "index.html": "/skatesona/index.html",
-    "precache-manifest.62fc4110f3ee8317436f525250a06678.js": "/skatesona/precache-manifest.62fc4110f3ee8317436f525250a06678.js",
+    "precache-manifest.cffe5c070485846dd6ed9efb3df96148.js": "/skatesona/precache-manifest.cffe5c070485846dd6ed9efb3df96148.js",
     "service-worker.js": "/skatesona/service-worker.js",
     "static/css/main.dc1d742c.chunk.css.map": "/skatesona/static/css/main.dc1d742c.chunk.css.map",
-    "static/js/2.d9ba9ce6.chunk.js.LICENSE.txt": "/skatesona/static/js/2.d9ba9ce6.chunk.js.LICENSE.txt",
+    "static/js/2.1fd35320.chunk.js.LICENSE.txt": "/skatesona/static/js/2.1fd35320.chunk.js.LICENSE.txt",
     "static/media/skate.svg": "/skatesona/static/media/skate.2f84ee98.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.237b1604.js",
-    "static/js/2.d9ba9ce6.chunk.js",
+    "static/js/2.1fd35320.chunk.js",
     "static/css/main.dc1d742c.chunk.css",
-    "static/js/main.fced06f9.chunk.js"
+    "static/js/main.e6290ff8.chunk.js"
   ]
 }
