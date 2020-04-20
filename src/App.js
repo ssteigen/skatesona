@@ -61,33 +61,46 @@ function SwatchGroup({ groupName, colors, onBootColorChange }) {
   );
 }
 
-function PartPanel({ partName, group, onBootColorChange }) {
+function PartPanel({ partName, group, onBootColorChange, onBootColorLock }) {
   return (
     <>
-      <div>{partName}</div>
-      {Object.entries(group).map(([groupName, colors]) => (
-        <SwatchGroup
-          key={`${partName}-${groupName}`}
-          groupName={groupName}
-          colors={colors}
-          onBootColorChange={onBootColorChange}
-        />
-      ))}
+      <div className="bg-gray-300 rounded p-2">
+        {Object.entries(group).map(([groupName, colors]) => (
+          <SwatchGroup
+            key={`${partName}-${groupName}`}
+            groupName={groupName}
+            colors={colors}
+            onBootColorChange={onBootColorChange}
+          />
+        ))}
+      </div>
     </>
   );
 }
 
 function ColorPicker({ options, onBootColorChange }) {
+  const [activeTab, setActiveTab] = useState("Boot");
+
+  const partNames = Object.keys(options);
+
   return (
-    <div className="p-4">
-      {Object.entries(options).map(([partName, group]) => (
-        <PartPanel
+    <div className="bg-gray-200">
+      {partNames.map((partName) => (
+        <div
           key={partName}
-          partName={partName}
-          group={group}
-          onBootColorChange={onBootColorChange}
-        />
+          className="py-2 px-4 bg-gray-400 rounded inline-block"
+          onClick={() => setActiveTab(partName)}
+        >
+          {partName}
+        </div>
       ))}
+
+      <PartPanel
+        key={activeTab}
+        partName={activeTab}
+        group={options[activeTab]}
+        onBootColorChange={onBootColorChange}
+      />
     </div>
   );
 }
