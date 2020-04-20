@@ -4,6 +4,11 @@ View this app at https://ssteigen.github.io/skatesona/
 
 ![Screenshot](skatesona.png)
 
+## Notes
+
+- Implement map dispatch to props
+- refactor setBootColor, setWheelColor, etc to setPartColor
+
 ## Development
 
 To install/run app locally:
@@ -20,7 +25,7 @@ To deploy app:
 
 `npm run deploy`
 
-----
+---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

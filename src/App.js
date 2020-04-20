@@ -6,6 +6,9 @@ import options from "./options";
 
 import styled from "styled-components";
 
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+
 function Layout({ children }) {
   return (
     <div className="flex flex-auto h-full items-center justify-center bg-gray-100 p-6">
@@ -105,6 +108,9 @@ function ColorPicker({ options, onBootColorChange }) {
   );
 }
 
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(this.setBootColor, dispatch);
+
 function Builder() {
   const [bootColor, setBootColor] = useState("");
   const [bootColorLocked, setBootColorLocked] = useState(false);
@@ -130,15 +136,7 @@ function Builder() {
   return (
     <div className="flex mb-4">
       <div className="w-1/2">
-        <StyledSkate
-          bootColor={bootColor}
-          lacesColor={lacesColor}
-          wheelsColor={wheelsColor}
-          toestopColor={toestopColor}
-          eyeletsColor={eyeletsColor}
-          soleColor={soleColor}
-          plateColor={plateColor}
-        />
+        <ConnectedStyledSkate />
       </div>
       <div className="w-1/2">
         <ColorPicker options={options} onBootColorChange={setBootColor} />
@@ -172,26 +170,26 @@ function Skate({ className }) {
 
 const StyledSkate = styled(Skate)`
   .boot {
-    fill: ${(props) => props.bootColor || "pink"};
+    fill: ${(props) => props.bootColor};
   }
   .lace {
-    fill: ${(props) => props.lacesColor || "violet"};
+    fill: ${(props) => props.lacesColor};
   }
   .wheel {
-    fill: ${(props) => props.wheelColor || "violet"};
+    fill: ${(props) => props.wheelsColor};
   }
   .toestop {
-    fill: ${(props) => props.toestopColor || "violet"};
+    fill: ${(props) => props.toestopColor};
   }
   .eyelet,
   .hook {
-    fill: ${(props) => props.eyeletsColor || "silver"};
+    fill: ${(props) => props.eyeletsColor};
   }
   .sole {
-    fill: ${(props) => props.soleColor || "black"};
+    fill: ${(props) => props.soleColor};
   }
   .plate {
-    fill: ${(props) => props.plateColor || "silver"};
+    fill: ${(props) => props.plateColor};
   }
   .bearing {
     fill: black;
@@ -201,6 +199,10 @@ const StyledSkate = styled(Skate)`
     fill: gray;
   }
 `;
+
+const mapStateToProps = (state) => state;
+
+const ConnectedStyledSkate = connect(mapStateToProps, null)(StyledSkate);
 
 function Footer() {
   return <div />;
